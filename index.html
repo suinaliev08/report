@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap" rel="stylesheet">
+	<title>Şikayet/Sonoyuncu</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			display: flex;
+			align-items: center;
+			height: 100vh;
+			justify-content: center;
+		}
+		.main{
+			display: flex;
+			flex-direction: column;
+			height: 90vh;
+			overflow: auto;
+		}
+		.main img{
+			max-width: 854px;
+		}
+		.description{
+			display: block;
+			position: fixed;
+			bottom: 5px;
+			right: 5px;
+		}
+		.description button{
+			width: 150px;
+			outline: none;
+			border: none;
+			background-color: #4299e1;
+			cursor: pointer;
+			color: white;
+			text-transform: uppercase;
+			height: 50px;
+			font-size: 18px;
+		}
+		.block{
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			background-color: rgb(0 0 1 / 11%);
+			height: 100%;
+		}
+		.block-child{
+			width: 800px;
+			height: 400px;
+			background-color: white;
+			border-radius: 5px;
+		}
+		.nav{
+			padding: 5px;
+			display: block;
+		}
+		.nav button{
+			display: block;
+			float: right;
+			font-size: 20px;
+			width: 50px;
+			outline: 0;
+			border: none;
+			background: none;
+			text-align: center;
+			padding: 5px;
+			height: 50px;
+			cursor: pointer;
+			animation-duration: .7s ease ;
+			border-radius: 50%;
+		}
+		.nav button:hover{
+			background-color: #f2f2f2;
+			
+		}
+		.about{
+			padding: 5px;
+			width: 100%;
+			text-align: left;
+			margin-top: 30px;
+		}
+		.about p{
+			color: black;
+			font-family: 'Montserrat', sans-serif;
+			font-size: 22px;
+		}
+		.toggle{
+			display: flex !important;
+		}
+		.main img{
+			cursor: pointer;
+		}
+		.img-block{
+			display: none;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: rgb(0 0 1 / 11%);
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		.img-block img{
+			z-index: 3;
+			width: 95%;
+			height: 98%;
+			border: 2px solid white;
+		}
+		.block-img{
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="block">
+		<div class="block-child">
+			<div class="nav">
+				<button>X</button>
+			</div>
+			<div class="about">
+				<p>Merhabalar ,</p>
+				<p>Bu Mesajı okuyor musun bilmiyorum ama okuyorsanız ne mutlu bana, öncelikle bu olay bu siteyi kodlamama neden oldu. Böyle cocuklara cidden yazık onların ailesine üzülğyorum sırf sanal ortam olunca bu kadar rahtlar, sizden tek isteğim bu arkadaşa ban atmak ve mute reportlama sisteminizi geliştirmek olsun.</p>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<img class="first" src="2022-07-07_12.32.37.png">
+	<img src="2022-07-07_12.42.49.png">
+	</div>
+	<div class="description">
+		<button>Açıklama</button>
+	</div>
+	<div class="img-block">
+		<div class="block-img">
+			
+		</div>
+		<img  src="2022-07-07_12.32.37.png">
+			</div>
+	<script type="text/javascript">
+		const button = document.querySelector('.nav button');
+		const add=document.querySelector('.description button')
+		const block = document.querySelector('.block');
+		const imgblock=document.querySelector('.img-block');
+		const img = document.querySelector('.first')
+		const removeimg=document.querySelector('.block-img')
+
+		button.addEventListener('click', () => {
+   				block.classList.remove('toggle') 
+});
+		add.addEventListener('click', () => {
+   				block.classList.add('toggle')
+});
+		img.addEventListener('click', () => {
+   			imgblock.classList.add('toggle')
+});
+		removeimg.addEventListener('click', () => {
+   				imgblock.classList.remove('toggle')
+});
+
+
+	</script>
+</body>
+</html>
